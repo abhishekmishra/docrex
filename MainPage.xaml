@@ -30,7 +30,7 @@
                     <ListView x:Name="NavLinksList" SelectionMode="None" Grid.Row="1"
                     ItemClick="NavLinksList_ItemClick" IsItemClickEnabled="True"
                      ItemsSource="{x:Bind Containers}" 
-                                    ItemTemplate="{StaticResource NavLinkItemTemplate}" Grid.RowSpan="2" />
+                                    ItemTemplate="{StaticResource NavLinkItemTemplate}" Grid.RowSpan="2" Margin="0,40,0,0" />
                 </Grid>
             </SplitView.Pane>
         </SplitView>

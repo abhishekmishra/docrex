@@ -29,7 +29,7 @@ namespace docrex
 
         private ObservableCollection<Container> _containers = new ObservableCollection<Container>()
         {
-            new Container() { Label = "People", Symbol = Windows.UI.Xaml.Controls.Symbol.People  },
+            //new Container() { Label = "People", Symbol = Windows.UI.Xaml.Controls.Symbol.People  },
             //new Container() { Label = "Globe", Symbol = Windows.UI.Xaml.Controls.Symbol.Globe },
             //new Container() { Label = "Message", Symbol = Windows.UI.Xaml.Controls.Symbol.Message },
             //new Container() { Label = "Mail", Symbol = Windows.UI.Xaml.Controls.Symbol.Mail },
