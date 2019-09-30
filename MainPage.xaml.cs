@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Navigation;
 using Docker.DotNet;
 using Docker.DotNet.Models;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -59,7 +60,7 @@ namespace docrex
             });
             foreach(ContainerListResponse container in containers)
             {
-                Console.WriteLine(container.Names[0]);
+                Debug.WriteLine(container.Names[0]);
                 Containers.Add(new Container() { Label = container.Names[0], Symbol = Windows.UI.Xaml.Controls.Symbol.Globe } );
             }
         }
