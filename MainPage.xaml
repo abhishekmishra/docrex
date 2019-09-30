@@ -8,41 +8,35 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Page.Resources>
-        <DataTemplate x:Key="NavLinkItemTemplate" x:DataType="local:Container">
-            <StackPanel Orientation="Horizontal" Margin="2,0,0,0" AutomationProperties.Name="{x:Bind Label}">
-                <SymbolIcon Symbol="{x:Bind Symbol}" />
-                <TextBlock Text="{x:Bind Label}" Margin="24,0,0,0" VerticalAlignment="Center" />
-            </StackPanel>
-        </DataTemplate>
-    </Page.Resources>
-
     <Grid>
-        <NavigationView>
+        <NavigationView ItemInvoked="NavigationView_ItemInvoked">
             <NavigationView.MenuItems>
-                <NavigationViewItem Icon="Play" Content="Menu Item1" Tag="SamplePage1" />
-                <NavigationViewItem Icon="Save" Content="Menu Item2" Tag="SamplePage2" />
-                <NavigationViewItem Icon="Refresh" Content="Menu Item3" Tag="SamplePage3" />
-                <NavigationViewItem Icon="Download" Content="Menu Item4" Tag="SamplePage4" />
+                <NavigationViewItem Content="Containers" Tag="Containers" >
+                    <NavigationViewItem.Icon>
+                        <FontIcon Foreground="#f8d876" FontFamily="Segoe MDL2 Assets" Glyph="&#xE977;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItem Content="Images" Tag="Images" >
+                    <NavigationViewItem.Icon>
+                        <!-- Glyph="&#xE70B;"-->
+                        <FontIcon FontFamily="Segoe MDL2 Assets">
+                            <FontIcon.Glyph>&#xE70B;</FontIcon.Glyph>
+                        </FontIcon>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItem Content="Networks" Tag="Networks" >
+                    <NavigationViewItem.Icon>
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE968;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
+                <NavigationViewItem Content="Mounts" Tag="Mounts" >
+                    <NavigationViewItem.Icon>
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xEDA2;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
             </NavigationView.MenuItems>
             <Frame x:Name="contentFrame">
 
-                <SplitView IsPaneOpen="True"
-           DisplayMode="Inline"
-           OpenPaneLength="296">
-                    <SplitView.Content>
-                        <TextBlock Text="Container Detail" x:Name="ContentHeader" Style="{StaticResource BaseTextBlockStyle}" Grid.RowSpan="2"/>
-                    </SplitView.Content>
-                    <SplitView.Pane>
-                        <Grid>
-                            <TextBlock Text="Container List" x:Name="PaneHeader" Style="{StaticResource BaseTextBlockStyle}" Grid.RowSpan="2" HorizontalAlignment="Center" Margin="0,10,0,0"/>
-                            <ListView x:Name="NavLinksList" SelectionMode="None" Grid.Row="1"
-                    ItemClick="NavLinksList_ItemClick" IsItemClickEnabled="True"
-                     ItemsSource="{x:Bind Containers}" 
-                                    ItemTemplate="{StaticResource NavLinkItemTemplate}" Grid.RowSpan="2" Margin="0,40,0,0" />
-                        </Grid>
-                    </SplitView.Pane>
-                </SplitView>
             </Frame>
 
         </NavigationView>

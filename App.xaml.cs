@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Docker.DotNet;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,6 +23,8 @@ namespace docrex
     /// </summary>
     sealed partial class App : Application
     {
+        public DockerClient client;
+
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -30,6 +33,7 @@ namespace docrex
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            client = new DockerClientConfiguration(new Uri("http://192.168.1.33:2376/")).CreateClient();
         }
 
         /// <summary>
