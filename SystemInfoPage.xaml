@@ -12,8 +12,17 @@
         <TextBlock x:Name="SystemInfoPageTitle" Text="System Info" HorizontalAlignment="Center" Margin="0,10,0,0"></TextBlock>
         <RichTextBlock HorizontalAlignment="Center" Margin="0,25,0,0">
             <Paragraph>
-                <Run Text="The system version is: "></Run>
+                Docker server
+                <Run Text="{x:Bind SystemInfo.Name}"></Run>
+                running Server Version
                 <Run Text="{x:Bind SystemInfo.ServerVersion}"></Run>
+                running on
+                <Run Text="{x:Bind SystemInfo.OperatingSystem}"></Run>
+                [
+                <Run Text="{x:Bind SystemInfo.Architecture}"/>
+                ].
+                <Run Text="{x:Bind SystemInfo.NCPU}"/> CPUs,
+                <Run Text="{x:Bind SystemInfo.NCPU}"/>GB RAM
             </Paragraph>
         </RichTextBlock>
     </Grid>
