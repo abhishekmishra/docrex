@@ -25,15 +25,9 @@ namespace docrex
     /// </summary>
     public sealed partial class ContainersPage : Page
     {
-        private ObservableCollection<Container> _containers = new ObservableCollection<Container>()
-        {
-            //new Container() { Label = "People", Symbol = Windows.UI.Xaml.Controls.Symbol.People  },
-            //new Container() { Label = "Globe", Symbol = Windows.UI.Xaml.Controls.Symbol.Globe },
-            //new Container() { Label = "Message", Symbol = Windows.UI.Xaml.Controls.Symbol.Message },
-            //new Container() { Label = "Mail", Symbol = Windows.UI.Xaml.Controls.Symbol.Mail },
-        };
+        private ObservableCollection<ContainerListResponse> _containers = new ObservableCollection<ContainerListResponse>() { };
 
-        public ObservableCollection<Container> Containers
+        public ObservableCollection<ContainerListResponse> Containers
         {
             get { return _containers; }
         }
@@ -42,6 +36,7 @@ namespace docrex
         {
             this.loadContainers();
             this.InitializeComponent();
+            dataGrid.DataContext = Containers;
         }
 
         async void loadContainers()
@@ -51,10 +46,11 @@ namespace docrex
             {
                 Limit = 10,
             });
+            Containers.Clear();
             foreach (ContainerListResponse container in containers)
             {
                 Debug.WriteLine(container.Names[0]);
-                Containers.Add(new Container() { Label = container.Names[0], Symbol = Windows.UI.Xaml.Controls.Symbol.Globe });
+                Containers.Add(container);
             }
         }
 
@@ -64,10 +60,25 @@ namespace docrex
         }
     }
 
-    public class Container
+    public class ContainerFirstNameConverter: IValueConverter
     {
-        public string Label { get; set; }
-        public Symbol Symbol { get; set; }
+        object IValueConverter.Convert(object value, Type targetType, object parameter, string language)
+        {
+            IList<string> names = (IList<string>)value;
+            if(names.Count > 0)
+            {
+                return names[0];
+            }
+            else
+            {
+                return "NoName";
+            }
+        }
+
+        object IValueConverter.ConvertBack(object value, Type targetType, object parameter, string language)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }
