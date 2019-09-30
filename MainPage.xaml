@@ -11,6 +11,11 @@
     <Grid>
         <NavigationView ItemInvoked="NavigationView_ItemInvoked">
             <NavigationView.MenuItems>
+                <NavigationViewItem Content="System Info" Tag="SystemInfo" >
+                    <NavigationViewItem.Icon>
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE770;"/>
+                    </NavigationViewItem.Icon>
+                </NavigationViewItem>
                 <NavigationViewItem Content="Containers" Tag="Containers" >
                     <NavigationViewItem.Icon>
                         <FontIcon Foreground="#f8d876" FontFamily="Segoe MDL2 Assets" Glyph="&#xE977;"/>
@@ -29,7 +34,7 @@
                         <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE968;"/>
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
-                <NavigationViewItem Content="Mounts" Tag="Mounts" >
+                <NavigationViewItem Content="Volumes" Tag="Volumes" >
                     <NavigationViewItem.Icon>
                         <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xEDA2;"/>
                     </NavigationViewItem.Icon>

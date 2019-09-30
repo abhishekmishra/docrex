@@ -31,10 +31,11 @@ namespace docrex
         // List of ValueTuple holding the Navigation Tag and the relative Navigation Page
         private readonly List<(string Tag, Type Page)> _pages = new List<(string Tag, Type Page)>
         {
+            ("SystemInfo", typeof(SystemInfoPage)),
             ("Containers", typeof(ContainersPage)),
-            ("Images", typeof(ContainersPage)),
-            ("Networks", typeof(ContainersPage)),
-            ("Mounts", typeof(ContainersPage)),
+            ("Images", typeof(ImagesPage)),
+            ("Networks", typeof(NetworksPage)),
+            ("Volumes", typeof(VolumesPage)),
             ("settings", typeof(ContainersPage)),
 
         };
