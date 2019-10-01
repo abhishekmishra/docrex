@@ -36,6 +36,8 @@ namespace docrex
             SystemInfo = await ((App)Application.Current).client.System.GetSystemInfoAsync();
             Debug.WriteLine("Docker version is -> " + SystemInfo.ServerVersion);
             Bindings.Update();
+            ProgressRing.IsActive = false;
+            SystemInfoDetails.Visibility = Visibility.Visible;
         }
     }
 }

@@ -31,7 +31,7 @@ namespace docrex
         // List of ValueTuple holding the Navigation Tag and the relative Navigation Page
         private readonly List<(string Tag, Type Page)> _pages = new List<(string Tag, Type Page)>
         {
-            ("SystemInfo", typeof(SystemInfoPage)),
+            ("System", typeof(SystemInfoPage)),
             ("Containers", typeof(ContainersPage)),
             ("Images", typeof(ImagesPage)),
             ("Networks", typeof(NetworksPage)),
@@ -78,7 +78,18 @@ namespace docrex
             if (!(_page is null) && !Type.Equals(preNavPageType, _page))
             {
                 contentFrame.Navigate(_page, null, transitionInfo);
+                NavView.Header = navItemTag;
             }
+        }
+
+        private void NavigationView_Loaded(object sender, RoutedEventArgs e)
+        {
+            // NavView doesn't load any page by default, so load home page.
+            NavView.SelectedItem = NavView.MenuItems[0];
+            // If navigation occurs on SelectionChanged, this isn't needed.
+            // Because we use ItemInvoked to navigate, we need to call Navigate
+            // here to load the home page.
+            NavView_Navigate("System", new EntranceNavigationTransitionInfo());
         }
     }
 }

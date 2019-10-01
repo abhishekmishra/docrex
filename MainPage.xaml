@@ -9,9 +9,9 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <NavigationView ItemInvoked="NavigationView_ItemInvoked">
+        <NavigationView x:Name="NavView" ItemInvoked="NavigationView_ItemInvoked" Loaded="NavigationView_Loaded">
             <NavigationView.MenuItems>
-                <NavigationViewItem Content="System Info" Tag="SystemInfo" >
+                <NavigationViewItem Content="System Info" Tag="System" >
                     <NavigationViewItem.Icon>
                         <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE770;"/>
                     </NavigationViewItem.Icon>
