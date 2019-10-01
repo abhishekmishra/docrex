@@ -48,6 +48,8 @@ namespace docrex
             Bindings.Update();
             ProgressRing.IsActive = false;
             SystemInfoDetails.Visibility = Visibility.Visible;
+            ExtendedInfo.Visibility = Visibility.Visible;
+            EventsInfo.Visibility = Visibility.Visible;
 
             CancellationTokenSource cancellation = new CancellationTokenSource();
             var eventsProgress = new Progress<JSONMessage>(ShowEvent);

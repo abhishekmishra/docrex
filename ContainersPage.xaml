@@ -10,38 +10,11 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Page.Resources>
-        <!--    
-        <DataTemplate x:Key="NavLinkItemTemplate" x:DataType="local:Container">
-            <StackPanel Orientation="Horizontal" Margin="2,0,0,0" AutomationProperties.Name="{x:Bind Label}">
-                <SymbolIcon Symbol="{x:Bind Symbol}" />
-                <TextBlock Text="{x:Bind Label}" Margin="24,0,0,0" VerticalAlignment="Center" />
-            </StackPanel>
-        </DataTemplate>
-        -->
         <local:ContainerFirstNameConverter x:Key="ContainerFirstNameConverter" />
     </Page.Resources>
 
 
     <Grid>
-        <TextBlock x:Name="ContainersPageTitle" Text="Containers"></TextBlock>
-
-        <!--<SplitView IsPaneOpen="True"
-           DisplayMode="Inline"
-           OpenPaneLength="296">
-            <SplitView.Content>
-                <TextBlock Text="Container Detail" x:Name="ContentHeader" Style="{StaticResource BaseTextBlockStyle}" Grid.RowSpan="2"/>
-            </SplitView.Content>
-            <SplitView.Pane>
-                <Grid>
-                    <TextBlock Text="Container List" x:Name="PaneHeader" Style="{StaticResource BaseTextBlockStyle}" Grid.RowSpan="2" HorizontalAlignment="Center" Margin="0,10,0,0"/>
-                    <ListView x:Name="NavLinksList" SelectionMode="None" Grid.Row="1"
-                    ItemClick="NavLinksList_ItemClick" IsItemClickEnabled="True"
-                     ItemsSource="{x:Bind Containers}" 
-                                    ItemTemplate="{StaticResource NavLinkItemTemplate}" Grid.RowSpan="2" Margin="0,40,0,0" />
-                </Grid>
-            </SplitView.Pane>
-        </SplitView>-->
-
         <Grid>
             <controls:DataGrid
               Grid.Row="1"
@@ -66,17 +39,13 @@
                 SelectionMode="Extended"
                 RowGroupHeaderPropertyNameAlternative="Range">
                 <controls:DataGrid.Columns>
-                    <controls:DataGridTextColumn Header="ID" Binding="{Binding ID}" Tag="ID" />
+                    <!--<controls:DataGridTextColumn Header="ID" Binding="{Binding ID}" Tag="ID" />-->
                     <controls:DataGridTextColumn Header="Name" Binding="{Binding Names, Converter={StaticResource ContainerFirstNameConverter}}" Tag="Name"/>
                     <controls:DataGridTextColumn Header="Image" Binding="{Binding Image}" Tag="Image" />
                     <controls:DataGridTextColumn Header="Command" Binding="{Binding Command}" Tag="Command" />
                     <controls:DataGridTextColumn Header="Created" Binding="{Binding Created}" Tag="Created" />
                     <controls:DataGridTextColumn Header="State" Binding="{Binding State}" Tag="State" />
                     <controls:DataGridTextColumn Header="Status" Binding="{Binding Status}" Tag="Status" />
-                    <!--<controls:DataGridComboBoxColumn Header="Mountain" Binding="{Binding Mountain}" Tag="Mountain" />
-                        <controls:DataGridTextColumn Header="Height (m)" Binding="{Binding Height_m}" Tag="Height_m" />
-                        <controls:DataGridTextColumn Header="Range" Binding="{Binding Range}" Tag="Range" />
-                        <controls:DataGridTextColumn Header="Parent Mountain" Binding="{Binding Parent_mountain}" Tag="Parent_mountain" />-->
                 </controls:DataGrid.Columns>
             </controls:DataGrid>
         </Grid>

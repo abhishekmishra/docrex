@@ -18,15 +18,12 @@
                 </NavigationViewItem>
                 <NavigationViewItem Content="Containers" Tag="Containers" >
                     <NavigationViewItem.Icon>
-                        <FontIcon Foreground="#f8d876" FontFamily="Segoe MDL2 Assets" Glyph="&#xE977;"/>
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE977;"/>
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
                 <NavigationViewItem Content="Images" Tag="Images" >
                     <NavigationViewItem.Icon>
-                        <!-- Glyph="&#xE70B;"-->
-                        <FontIcon FontFamily="Segoe MDL2 Assets">
-                            <FontIcon.Glyph>&#xE70B;</FontIcon.Glyph>
-                        </FontIcon>
+                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE70B;"/>
                     </NavigationViewItem.Icon>
                 </NavigationViewItem>
                 <NavigationViewItem Content="Networks" Tag="Networks" >

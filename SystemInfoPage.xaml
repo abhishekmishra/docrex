@@ -32,7 +32,7 @@
                 </Paragraph>
             </RichTextBlock>
         </Grid>
-        <Grid Grid.Row="1" Grid.Column="0" Width="Auto" Height="Auto" HorizontalAlignment="Center">
+        <Grid x:Name="ExtendedInfo" Grid.Row="1" Grid.Column="0" Width="Auto" Height="Auto" HorizontalAlignment="Center" Visibility="Collapsed">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition Width="Auto" />
@@ -57,7 +57,7 @@
                 </TextBlock>
             </StackPanel>
         </Grid>
-        <Grid Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" Height="Auto">
+        <Grid x:Name="EventsInfo" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" Height="Auto" Visibility="Collapsed">
             <Border BorderBrush="Azure" BorderThickness="0.1">
                 <ListView x:Name="eventsListView" ItemsSource="{x:Bind Events}" Header="Docker Server Events" Margin="1">
                     <ListView.ItemTemplate>
